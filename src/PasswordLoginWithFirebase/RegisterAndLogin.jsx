@@ -16,7 +16,7 @@ function RegisterAndLogin() {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    if (type == "signup") {
+    if (type === "signup") {
       createUserWithEmailAndPassword(database, email, password)
         .then((data) => {
           console.log(data, "authData");
@@ -46,13 +46,13 @@ function RegisterAndLogin() {
       {/* Registration and login Screen */}
       <div className="row">
         <div
-          className={login == false ? "activeColor" : "pointer"}
+          className={login === false ? "activeColor" : "pointer"}
           onClick={() => setLogin(false)}
         >
           SignUp
         </div>
         <div
-          className={login == true ? "activeColor" : "pointer"}
+          className={login === true ? "activeColor" : "pointer"}
           onClick={() => setLogin(true)}
         >
           SignIn
